@@ -8,6 +8,7 @@ import TestimonialSection from './src/landingpage/testimonal/testimonal';
 import Features from './src/landingpage/featuerspage/featuerpage';
 import ProductPreview from './src/landingpage/productpreview/productpreview';
 
+
 const page = () => {
   return (
     <div>
@@ -19,7 +20,7 @@ const page = () => {
      <PricingSection></PricingSection>
      <FAQSection></FAQSection>
      <TestimonialSection></TestimonialSection>
-    </div>
+     </div>
   );
 };
 
