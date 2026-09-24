@@ -11,7 +11,7 @@ const navItems = [
   },
   {
     label: "EchoGPT",
-    href: "/app",
+    href: "/dashboard",
   },
 ];
 
@@ -61,12 +61,14 @@ export default function Navbar() {
 
    
         <div className="hidden items-center gap-3 md:flex">
+         
           <button
             type="button"
             className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-600 transition hover:bg-gray-100"
           >
             Sign In
           </button>
+        
 
         
         </div>
