@@ -13,6 +13,7 @@ const navItems = [
     label: "EchoGPT",
     href: "/dashboard",
   },
+  
 ];
 
 export default function Navbar() {
@@ -22,20 +23,19 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-violet-100 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-     
+        
+        {/* Logo */}
         <Link
           href="/"
           className="flex items-center gap-3"
           onClick={() => setIsOpen(false)}
         >
-        
-
           <span className="text-xl font-bold tracking-[0.12em] text-violet-600">
             EchoGPT
           </span>
         </Link>
 
-   
+        {/* Desktop Nav Links */}
         <nav className="hidden items-center gap-2 md:flex">
           {navItems.map((item) => {
             const isActive =
@@ -59,21 +59,17 @@ export default function Navbar() {
           })}
         </nav>
 
-   
-        <div className="hidden items-center gap-3 md:flex">
-         
-          <button
-            type="button"
-            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-600 transition hover:bg-gray-100"
+        {/* Desktop Sign In Button */}
+        <div className="hidden border-2 rounded-2xl bg-green-500 text-white p-2 items-center gap-3 md:flex">
+          <Link
+            href="/Register"
+            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-600 transition"
           >
             Sign In
-          </button>
-        
-
-        
+          </Link>
         </div>
 
-     
+        {/* Mobile Menu Toggle Button */}
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
@@ -116,14 +112,13 @@ export default function Navbar() {
             })}
 
             <div className="mt-2 flex flex-col gap-2 border-t border-gray-100 pt-3">
-              <button
-                type="button"
+              <Link
+                href="/login"
+                onClick={() => setIsOpen(false)}
                 className="rounded-xl px-4 py-3 text-left text-sm font-semibold text-gray-600 hover:bg-gray-100"
               >
                 Sign In
-              </button>
-
-              
+              </Link>
             </div>
           </nav>
         </div>
