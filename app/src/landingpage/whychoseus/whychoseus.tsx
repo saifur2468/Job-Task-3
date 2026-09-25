@@ -1,38 +1,43 @@
 import React from 'react';
-
+import { FaBrain } from "react-icons/fa";
+import { GiFireworkRocket } from "react-icons/gi";
+import { MdOutlineSms } from "react-icons/md";
+import { FaChrome } from "react-icons/fa";
+import { IoMdDesktop } from "react-icons/io";
+import { FaLock } from "react-icons/fa";
 const features = [
   {
-    icon: "🧠",
+    icon: <FaBrain />,
     title: "Multiple AI Models",
     subtitle: "One Workspace, Multiple AI Experiences",
     description: "Explore different AI models from a single, unified workspace without switching between multiple platforms."
   },
   {
-    icon: "⚡",
+    icon: <GiFireworkRocket />,
     title: "Faster Workflow",
     subtitle: "Get More Done in Less Time",
     description: "Quickly move from asking questions to creating, analyzing, and completing tasks with smart AI workflows."
   },
   {
-    icon: "💬",
+    icon: <MdOutlineSms />,
     title: "Smart Conversations",
     subtitle: "Conversations That Stay Organized",
     description: "Keep your important AI conversations organized and easily return to previous discussions whenever you need them."
   },
   {
-    icon: "🧩",
+    icon: <FaChrome />,
     title: "Chrome Extension",
     subtitle: "AI Wherever You Browse",
     description: "Bring your AI assistant directly into your browser and access useful AI tools without leaving the page."
   },
   {
-    icon: "🎨",
+    icon: <IoMdDesktop />,
     title: "Simple & Modern UI",
     subtitle: "Designed for a Better Experience",
     description: "A clean, intuitive interface makes it easier to discover features, start conversations, and focus on your work."
   },
   {
-    icon: "🔒",
+    icon: <FaLock />,
     title: "One Connected Workspace",
     subtitle: "Everything in One Place",
     description: "Bring conversations, tools, models, and productivity features together in one streamlined workspace."

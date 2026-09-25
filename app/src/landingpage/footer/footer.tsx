@@ -12,6 +12,8 @@ import {
   LucideMapPinCheckInside,
   LucideTextWrap,
 } from "lucide-react";
+import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -43,7 +45,7 @@ export default function Footer() {
                 aria-label="GitHub"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition hover:border-black hover:bg-black hover:text-white"
               >
-                <GitBranchPlus size={18} />
+                <FaGithub size={18} />
               </a>
 
               <a
@@ -51,7 +53,7 @@ export default function Footer() {
                 aria-label="Twitter"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition hover:border-black hover:bg-black hover:text-white"
               >
-                <LucideTextWrap size={18} />
+                <FaTwitter  size={18} />
               </a>
 
               <a
@@ -59,7 +61,7 @@ export default function Footer() {
                 aria-label="LinkedIn"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition hover:border-black hover:bg-black hover:text-white"
               >
-                <LucideMapPinCheckInside size={18} />
+                <FaLinkedin size={18} />
               </a>
             </div>
           </div>

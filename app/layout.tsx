@@ -4,6 +4,7 @@ import Navbar from "./src/landingpage/navbar/navbar";
 import Footer from "./src/landingpage/footer/footer";
 
 
+
 export const metadata: Metadata = {
   title: "EchoGPT",
   description: "A modern AI workspace for everyone.",
@@ -20,8 +21,24 @@ export default function RootLayout({
   <Navbar></Navbar>
 
         {children}
+     
         <Footer></Footer>
       </body>
     </html>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
