@@ -13,6 +13,10 @@ const navItems = [
     label: "EchoGPT",
     href: "/dashboard",
   },
+    {
+    label: "Extension",
+    href: "/extension",
+  },
   
 ];
 
@@ -60,10 +64,10 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop Sign In Button */}
-        <div className="hidden border-2 rounded-2xl bg-green-500 text-white p-2 items-center gap-3 md:flex">
+        <div className="hidden border-2 rounded-2xl bg-blue-500 text-white p-2 items-center gap-3 md:flex">
           <Link
             href="/Register"
-            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-gray-600 transition"
+            className="rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition"
           >
             Sign In
           </Link>

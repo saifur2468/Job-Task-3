@@ -11,6 +11,7 @@ import {
   Send,
   Sparkles,
 } from "lucide-react";
+import { FaHand } from "react-icons/fa6";
 
 const SUGGESTION_CARDS = [
   {
@@ -47,7 +48,7 @@ export default function DashboardHomePage() {
       {/* Center greeting + suggestion cards */}
       <div className="flex flex-1 flex-col items-center justify-center overflow-y-auto px-6 py-10">
         <h1 className="text-center text-[32px] font-bold leading-tight text-[#1A1823] dark:text-white">
-          Hello There! 👋 How can I assist you today?
+          Hello There! <FaHand></FaHand> How can I assist you today?
         </h1>
         <p className="mt-3 text-center text-[14.5px] text-[#8B8898]">
           Your personal AI assistant is ready to help—ask me anything, anytime.
