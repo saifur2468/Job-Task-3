@@ -1,3 +1,13 @@
+"use client";
+
+import React, { useRef } from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
 type Testimonial = {
   id: number;
   title: string;
@@ -22,7 +32,7 @@ const testimonialsData: Testimonial[] = [
     id: 2,
     title: "Great Agents!",
     comment:
-      "Finding a apartment used to be a nightmare until I discovered this platform. The process was completely seamless and transparent from start to finish.",
+      "Finding an apartment used to be a nightmare until I discovered this platform. The process was completely seamless and transparent from start to finish.",
     name: "James Tores",
     role: "CLIENT OF AGENCY",
     avatar:
@@ -30,7 +40,7 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: 3,
-    title: "Very nice!",
+    title: "Very Nice!",
     comment:
       "The virtual tour features and quick agent response saved me so much time. I was able to book my luxury rental within just two days!",
     name: "Katrin Forest",
@@ -109,3 +119,141 @@ const testimonialsData: Testimonial[] = [
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
   },
 ];
+
+export default function TestimonialSection() {
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
+
+  return (
+    <section className="relative overflow-hidden bg-[#EAEAEA] px-4 py-20 font-sans md:px-12">
+      <div className="mx-auto max-w-7xl">
+
+        {/* Header */}
+        <div className="mb-12 flex items-end justify-between gap-6">
+          <div>
+            <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray-400">
+              TESTIMONIALS
+            </span>
+
+            <h2 className="font-serif text-3xl font-normal italic text-gray-900 md:text-5xl">
+              What Our Clients
+              <br />
+
+              <span className="font-sans font-bold not-italic">
+                Say About Us
+              </span>
+            </h2>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex shrink-0 gap-3">
+            <button
+              ref={prevRef}
+              type="button"
+              aria-label="Previous testimonial"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-400 text-xl transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+            >
+              ←
+            </button>
+
+            <button
+              ref={nextRef}
+              type="button"
+              aria-label="Next testimonial"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-400 text-xl transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        {/* Slider */}
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 2.5,
+            },
+          }}
+          onInit={(swiper) => {
+            const navigation = swiper.params.navigation;
+
+            if (navigation && typeof navigation !== "boolean") {
+              navigation.prevEl = prevRef.current;
+              navigation.nextEl = nextRef.current;
+
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }
+          }}
+          className="w-full !overflow-visible"
+        >
+          {testimonialsData.map((item) => (
+            <SwiperSlide key={item.id} className="h-auto">
+              <article className="relative flex min-h-[300px] h-full flex-col justify-between bg-[#EAEAEA] pr-6">
+
+                {/* Large Quote */}
+                <div className="pointer-events-none absolute right-0 top-0 select-none font-serif text-[180px] leading-none text-gray-300 opacity-40">
+                  “
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="font-serif text-2xl font-bold text-gray-900">
+                      “
+                    </span>
+
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <p className="mb-8 text-sm leading-relaxed text-gray-700 md:text-base">
+                    {item.comment}
+                  </p>
+                </div>
+
+                {/* User */}
+                <div>
+                  <hr className="mb-6 border-gray-300" />
+
+                  <div className="flex items-center gap-4">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                      <Image
+                        src={item.avatar}
+                        alt={`${item.name} profile`}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900 md:text-base">
+                        {item.name}
+                      </h4>
+
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+                        {item.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+}
