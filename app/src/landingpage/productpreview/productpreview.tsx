@@ -8,20 +8,20 @@ const previews = [
     title: "AI Chat Interface",
     description:
       "Have natural conversations with EchoGPT through a clean and intuitive chat experience.",
-    image: "/screenshots/chat-interface.png",
+    image: "/screenshots/mobile.png",
     large: true,
   },
   {
     title: "Smart Conversations",
     description:
       "Get fast and helpful AI responses for your everyday questions.",
-    image: "/screenshots/conversation.png",
+    image: "/img/Screenshot 2026-09-26 115227.png",
   },
   {
     title: "Mobile Experience",
     description:
       "Enjoy the same smooth AI experience on your mobile devices.",
-    image: "/screenshots/mobile.png",
+    image:"/img/Screenshot 2026-09-26 115314.png" ,
   },
 ];
 
